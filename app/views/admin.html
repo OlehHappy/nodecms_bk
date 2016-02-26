@@ -1,0 +1,43 @@
+<h1>HOME VIEW</h1>
+<br />
+<div>Scope: {{ name }}</div>
+
+<form action="#" method="POST" id="f">
+  <div>
+    <div>Login name:</div>
+    <div><input type="text" name="LoginName" value="email@gmail.com" maxlength="200" /></div>
+  </div>
+  <br />
+  <div>
+    <div>Login password:</div>
+    <div><input type="text" name="LoginPassword" value="" maxlength="30" /></div>
+  </div>
+  <div id="error"></div>
+</form>
+<br />
+<button>Submit</button>
+<a href="/logout/" target="_blank">logout</a>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('button').bind('click', function() {
+      $.post('/admin/?ts=' + new Date().getTime(), $('#f').serialize(), function(d) {
+
+        var err = $('#error');
+
+        if (d instanceof Array) {
+
+          err.empty();
+          d.forEach(function(o) {
+            err.append('<div>' + o.error + '</div>');
+          });
+          err.show();
+          return;
+        };
+
+        err.hide();
+        window.location.href = '/users/';
+      });
+    });
+  });
+</script>

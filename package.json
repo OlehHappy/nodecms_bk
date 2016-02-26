@@ -1,0 +1,24 @@
+{
+  "name": "nodecms",
+  "version": "1.0.0",
+  "description": "## First step",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^4.4.4",
+    "total.js": "^1.9.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wowito/nodecms.git"
+  },
+  "author": "Oleh Daybov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wowito/nodecms/issues"
+  },
+  "homepage": "https://github.com/wowito/nodecms#readme"
+}
